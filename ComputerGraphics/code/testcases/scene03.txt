@@ -1,0 +1,166 @@
+PerspectiveCamera {
+    center 50 52 295.6
+    direction 0 -0.042612 -1
+    up 0 1 0
+    angle 30
+    width 1024
+    height 768
+}
+
+Background {
+    color 0 0 0 
+}
+
+Materials {
+    numMaterials 16
+    Material { 
+        diffuseColor 0.75 0.25 0.25
+        type 0
+    }
+    Material { 
+        diffuseColor 0.25 0.25 0.75 
+        type 0
+    }
+    Material { 
+        diffuseColor 0.75 0.75 0.75 
+        type 0
+    }
+    Material { 
+        diffuseColor 0 0 0
+        type 0
+    }
+    Material {
+        diffuseColor 0.8 0.8 0
+        type 1
+    }
+    Material {
+        diffuseColor 0 0 0
+        ambientColor 30 30 30
+        type 0
+    }
+    Material {
+        diffuseColor 1 1 1
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 1 1 1
+        type 1
+    }
+    Material { 
+        diffuseColor 0.9804 0.5020 0.4470
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 0 0 0
+        type 0
+        texture texture/greenbg.bmp
+    }
+    Material {
+        diffuseColor 0.3294 1 0.3294
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 0.2706 0.5451 0.4549
+        type 0
+    }
+    Material {
+        diffuseColor 0.5 0.5 0.5
+        type 0
+    }
+    Material {
+        diffuseColor 1 0.9255 0.5451
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 0 0 0
+        type 0
+        texture texture/wood.bmp
+    }
+    Material {
+        diffuseColor 0 0 0
+        type 0
+        texture texture/vase.bmp
+    }
+}
+
+Group {
+    numObjects 8
+    MaterialIndex 0
+    Plane {
+        normal 1 0 0
+        offset 1
+    }
+    MaterialIndex 11
+    Plane {
+        normal -1 0 0
+        offset -99 
+    }
+    MaterialIndex 9
+    Plane {
+        normal 0 0 1
+        offset 0
+    }
+    MaterialIndex 3
+    Plane {
+        normal 0 0 -1
+        offset -300
+    }
+    MaterialIndex 2
+    Plane {
+        normal 0 1 0
+        offset 0
+    }
+    MaterialIndex 2
+    Plane {
+        normal 0 -1 0
+        offset -81.6
+    }
+    MaterialIndex 15
+    Transform {
+        Scale 5.5 5.5 5.5
+        Translate 3.5 2.5 7
+        XRotate 0
+        RevSurface {
+            profile BsplineCurve {
+                controls
+                    [ 0.000000 -0.459543 0.0 ]
+                    [ 0.000000 -0.459544 0.0 ]
+                    [ 0.000000 -0.459545 0.0 ]
+                    [ -0.351882 -0.426747 0.0 ]
+                    [ -0.848656 -0.278898 0.0 ]
+                    [ -1.112097 0.084005 0.0 ]
+                    [ -1.164785 1.105511 0.0 ]
+                    [ -0.991667 2.328629 0.0 ]
+                    [ -1.029301 2.503360 0.0 ]
+                    [ -1.088800 2.345600 0.0 ]
+                    [ -1.278000 1.162800 0.0 ]
+                    [ -1.214800 0.055200 0.0 ]
+                    [ -0.915600 -0.381200 0.0 ]
+                    [ -0.380400 -0.622000 0.0 ]
+                    [ -0.144000 -0.968400 0.0 ]
+                    [ -0.096800 -1.480000 0.0 ]
+                    [ -0.128400 -2.112400 0.0 ]
+                    [ -0.317200 -2.202800 0.0 ]
+                    [ -0.994400 -2.262800 0.0 ]
+                    [ -1.214800 -2.323200 0.0 ]
+                    [ -1.199200 -2.398400 0.0 ]
+                    [ -1.057600 -2.458800 0.0 ]
+                    [ -0.711200 -2.458800 0.0 ]
+                    [ 0.000000 -2.458800 0.0 ]
+                    [ 0.000000 -2.458801 0.0 ]
+                    [ 0.000000 -2.458802 0.0 ]
+            }
+        }
+    }
+
+    MaterialIndex 5
+    Sphere {
+    center 50 681.33 81.6
+        radius 600
+    }
+
+}

@@ -1,0 +1,185 @@
+PerspectiveCamera {
+    center 50 52 295.6
+    direction 0 -0.042612 -1
+    up 0 1 0
+    angle 30
+    width 1024
+    height 768
+}
+
+Background {
+    color 0 0 0 
+}
+
+Materials {
+    numMaterials 17
+    Material { 
+        diffuseColor 0.75 0.25 0.25
+        type 0
+    }
+    Material { 
+        diffuseColor 0.25 0.25 0.75 
+        type 0
+    }
+    Material { 
+        diffuseColor 0.75 0.75 0.75 
+        type 0
+    }
+    Material { 
+        diffuseColor 0 0 0
+        type 0
+    }
+    Material {
+        diffuseColor 0.8 0.8 0
+        type 1
+    }
+    Material {
+        diffuseColor 0 0 0
+        ambientColor 30 30 30
+        type 0
+    }
+    Material {
+        diffuseColor 1 1 1
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 1 1 1
+        type 1
+    }
+    Material { 
+        diffuseColor 0.9804 0.5020 0.4470
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 0 0 0
+        type 0
+        texture texture/greenbg.bmp
+    }
+    Material {
+        diffuseColor 0.3294 1 0.3294
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 0.2706 0.5451 0.4549
+        type 0
+    }
+    Material {
+        diffuseColor 0.5 0.5 0.5
+        type 0
+    }
+    Material {
+        diffuseColor 1 0.9255 0.5451
+        type 2
+        refr 1.5
+    }
+    Material {
+        diffuseColor 0 0 0
+        type 0
+        texture texture/wood.bmp
+    }
+    Material {
+        diffuseColor 0 0 0
+        type 0
+        texture texture/vase.bmp
+    }
+    Material {
+        diffuseColor 1 1 1
+        type 2
+        refr 1.33
+    }
+}
+
+Group {
+    numObjects 13
+    MaterialIndex 0
+    Plane {
+        normal 1 0 0
+        offset 1
+    }
+    MaterialIndex 11
+    Plane {
+        normal -1 0 0
+        offset -99 
+    }
+    MaterialIndex 9
+    Plane {
+        normal 0 0 1
+        offset 0
+    }
+    MaterialIndex 3
+    Plane {
+        normal 0 0 -1
+        offset -300
+    }
+    MaterialIndex 2
+    Plane {
+        normal 0 1 0
+        offset 0
+    }
+    MaterialIndex 2
+    Plane {
+        normal 0 -1 0
+        offset -81.6
+    }
+    
+    MaterialIndex 4
+    Transform {
+        Translate 30 -8 112
+        Scale 110 110 110
+        XRotate 0
+        YRotate -10
+        TriangleMesh {
+            obj_file mesh/bunny_1k_vn.obj
+        }
+    }
+
+    MaterialIndex 14
+    Transform {
+        Translate 15 15 47
+        Scale 15 15 15
+        XRotate 0
+        TriangleMesh {
+            obj_file mesh/cube.obj
+        }
+    }
+
+    MaterialIndex 15
+    Sphere {
+    center 15 45 47
+        radius 15
+    }
+
+    MaterialIndex 10
+    Sphere {
+    center 73 7.5 78
+        radius 7.5
+    }
+    MaterialIndex 8
+    Transform {
+        YRotate 12.5
+        Sphere {
+            center 73 7.5 78
+            radius 7.5
+            Velocity 0 0 7.5
+        }
+    }
+    MaterialIndex 13
+    Transform {
+        YRotate -12.5
+        Sphere {
+            center 73 7.5 78
+            radius 7.5
+            Velocity -7.5 0 0
+        }
+    }
+
+    MaterialIndex 5
+    Sphere {
+    center 50 681.33 81.6
+        radius 600
+    }
+
+}

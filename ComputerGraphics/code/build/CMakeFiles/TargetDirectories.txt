@@ -1,0 +1,6 @@
+/Users/wangjuanli/Codefield/CG/Final/code/build/CMakeFiles/FINAL.dir
+/Users/wangjuanli/Codefield/CG/Final/code/build/CMakeFiles/edit_cache.dir
+/Users/wangjuanli/Codefield/CG/Final/code/build/CMakeFiles/rebuild_cache.dir
+/Users/wangjuanli/Codefield/CG/Final/code/build/deps/vecmath/CMakeFiles/vecmath.dir
+/Users/wangjuanli/Codefield/CG/Final/code/build/deps/vecmath/CMakeFiles/edit_cache.dir
+/Users/wangjuanli/Codefield/CG/Final/code/build/deps/vecmath/CMakeFiles/rebuild_cache.dir
