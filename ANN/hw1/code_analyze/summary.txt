@@ -1,0 +1,291 @@
+########################
+# Additional Files
+########################
+# .DS_Store
+# run_colab.ipynb
+# README.md
+# test.sh
+# test_gpu_colab.ipynb
+# data
+# __pycache__
+# test_hp.sh
+# wandb
+# test.py
+
+########################
+# Filled Code
+########################
+# ../codes/loss.py:1
+        return np.sum((input - target) ** 2) / input.shape[0]
+
+# ../codes/loss.py:2
+        return 2 * (input - target) / input.shape[0]
+
+# ../codes/loss.py:3
+        h = np.exp(input) / np.sum(np.exp(input), axis=1, keepdims=True)
+        return -np.sum(target * np.log(h)) / input.shape[0]
+
+# ../codes/loss.py:4
+        h = np.exp(input) / np.sum(np.exp(input), axis=1, keepdims=True)
+        return (h - target) / input.shape[0]
+
+# ../codes/loss.py:5
+        t = np.sum(input * target, axis=1, keepdims=True)
+        return np.sum(np.maximum(0, self.margin - t + input) * (1 - target)) / input.shape[0]
+
+# ../codes/loss.py:6
+        t = np.sum(input * target, axis=1, keepdims=True)
+        grad = np.where(self.margin - t + input > 0, 1, 0)
+        grad[target == 1] = -np.sum(grad, axis=1) + 1
+        return grad / input.shape[0]
+
+# ../codes/loss.py:7
+        alpha = np.array(self.alpha)
+        h = np.exp(input) / np.sum(np.exp(input), axis=1, keepdims=True)
+        return -np.sum((self.alpha * target + (1 - alpha) * (1 - target)) * (1 - h) ** self.gamma * target * np.log(h)) / input.shape[0]
+
+# ../codes/loss.py:8
+        alpha = np.array(self.alpha)
+        pre = np.sum((alpha * target + (1 - alpha) * (1 - target)) * target, axis=1, keepdims=True)
+        h = np.exp(input) / np.sum(np.exp(input), axis=1, keepdims=True)
+        gt = np.sum(h * target, axis=1, keepdims=True)
+        grad_1 = -((1 - h) ** self.gamma) * (-self.gamma * h * np.log(h) + 1 - h)
+        grad_2 = -((1 - gt) ** (self.gamma - 1)) * h * (self.gamma * gt * np.log(gt) - (1 - gt))
+        grad = pre * np.where(target > 0, grad_1, grad_2)
+        return grad / input.shape[0]
+
+# ../codes/layers.py:1
+        lmd = 1.0507
+        alpha = 1.67326
+        output = lmd * np.where(input > 0, input, alpha * (np.exp(input) - 1))
+        self._saved_for_backward(output)
+        return output
+
+# ../codes/layers.py:2
+        output,  = self._saved_tensors
+        lmd = 1.0507
+        alpha = 1.67326
+        # Using output to avoid exp calculation
+        return grad_output * np.where(output > 0, lmd, output + alpha * lmd)
+
+# ../codes/layers.py:3
+        sigmoid_u = 1 / (1 + np.exp(-input))
+        output = input * sigmoid_u
+        self._saved_for_backward(sigmoid_u, output)
+        return output
+
+# ../codes/layers.py:4
+        # f'(u) = (u * sigmoid(u))'
+        #       = sigmoid(u) + u * sigmoid(u) * (1 - sigmoid(u))
+        #       = sigmoid(u) + f(u) * (1 - sigmoid(u)))
+        #       = f(u) + sigmoid(u) * (1 - f(u))
+        sigmoid_u, output = self._saved_tensors
+        return grad_output * (output + sigmoid_u * (1 - output))
+
+# ../codes/layers.py:5
+        h = np.tanh(np.sqrt(2 / np.pi) * (input + 0.044715 * input ** 3))
+        output = 0.5 * input * (1 + h)
+        self._saved_for_backward(input, h)
+        return output
+
+# ../codes/layers.py:6
+        c = np.sqrt(2 / np.pi)
+        alp = 0.044715
+        input, h = self._saved_tensors
+        return grad_output * (0.5 * (1 + h + input * (1 - h ** 2) * (c + 3 * c * alp * input ** 2)))
+
+# ../codes/layers.py:7
+        self._saved_for_backward(input)
+        return input @ self.W + self.b
+
+# ../codes/layers.py:8
+        X, = self._saved_tensors
+        self.grad_W = X.T @ grad_output
+        self.grad_b = np.sum(grad_output, axis=0)
+        return grad_output @ self.W.T
+
+
+########################
+# References
+########################
+
+########################
+# Other Modifications
+########################
+# _codes/solve_net.py -> ../codes/solve_net.py
+# 3 + import wandb
+# 15 - def train_net(model, loss, config, inputs, labels, batch_size, disp_freq):
+# 16 + def train_net(model, loss, config, inputs, labels, batch_size, disp_freq, epoch, name):
+# 16 ?                                                                         +++++++++++++
+# 17 +
+# 18 +     prefix = name.split("_")[0]
+# 45 +             wandb.log({f"{prefix}_{config.hiddenlayers}layers_train_loss": np.mean(loss_list), f"{prefix}_{config.hiddenlayers}layers_train_acc": np.mean(acc_list)}, step=epoch)
+# 48 - def test_net(model, loss, inputs, labels, batch_size):
+# 52 + def test_net(model, loss, config, inputs, labels, batch_size, epoch, name):
+# 52 ?                         ++++++++                            +++++++++++++
+# 53 +     prefix = name.split("_")[0]
+# 54 +
+# 66 +     wandb.log({f"{prefix}_{config.hiddenlayers}layers_test_loss": np.mean(loss_list), f"{prefix}_{config.hiddenlayers}layers_test_acc": np.mean(acc_list)}, step=epoch)
+# _codes/layers.py -> ../codes/layers.py
+# 19 -     def _saved_for_backward(self, tensor):
+# 19 ?                                   ^^^ --
+# 19 +     def _saved_for_backward(self, *args):
+# 19 ?                                   ^^^^
+# 23 -         self._saved_tensor = tensor
+# 23 ?                              ^^^ --
+# 23 +         self._saved_tensors = args
+# 23 ?                           +   ^^^
+# 34 -         input = self._saved_tensor
+# 34 +         input, = self._saved_tensors
+# 34 ?              +                     +
+# 47 -         output = self._saved_tensor
+# 47 +         output, = self._saved_tensors
+# 47 ?               +                     +
+# 125 -         mm = config['momentum']
+# 125 ?                    ^^        --
+# 143 +         mm = config.momentum
+# 143 ?                    ^
+# 126 -         lr = config['learning_rate']
+# 126 ?                    ^^             --
+# 144 +         lr = config.learning_rate
+# 144 ?                    ^
+# 127 -         wd = config['weight_decay']
+# 127 ?                    ^^            --
+# 145 +         wd = config.weight_decay
+# 145 ?                    ^
+# _codes/run_mlp.py -> ../codes/run_mlp.py
+# 3 - from layers import Selu, Swish, Linear, Gelu
+# 3 + from layers import Sigmoid, Selu, Swish, Linear, Gelu, Relu
+# 3 ?                   +++++++++                          ++++++
+# 7 + from argparse import ArgumentParser
+# 8 + import time
+# 9 + import wandb
+# 10 +
+# 11 + def add_activation(model, config, layer):
+# 12 +     if config.activation == 'Selu':
+# 13 +         model.add(Selu(f'relu{layer}'))
+# 14 +     elif config.activation == 'Swish':
+# 15 +         model.add(Swish(f'swish{layer}'))
+# 16 +     elif config.activation == 'Relu':
+# 17 +         model.add(Relu(f'relu{layer}'))
+# 18 +     elif config.activation == 'Gelu':
+# 19 +         model.add(Gelu(f'gelu{layer}'))
+# 20 +     else:
+# 21 +         raise ValueError('activation must be Selu, Swish, Relu or Gelu')
+# 22 +
+# 23 + def init(config):
+# 24 +     model = Network()
+# 25 +
+# 26 +     if config.hiddenlayers < 1 or config.hiddenlayers > 3:
+# 27 +         raise ValueError('hiddenlayers must be 1 or 2')
+# 28 +
+# 29 +     if config.hiddenlayers == 1:
+# 30 +         model.add(Linear('fc1', 784, 128, config.learning_rate))
+# 31 +         add_activation(model, config, 1)
+# 32 +         model.add(Linear('fc2', 128, 10, config.learning_rate))
+# 33 +     elif config.hiddenlayers == 2:
+# 34 +         model.add(Linear('fc1', 784, 256, config.learning_rate))
+# 35 +         add_activation(model, config, 1)
+# 36 +         model.add(Linear('fc2', 256, 64, config.learning_rate))
+# 37 +         add_activation(model, config, 2)
+# 38 +         model.add(Linear('fc3', 64, 10, config.learning_rate))
+# 39 +
+# 40 +     # Initialize loss
+# 41 +     if config.loss == 'MSELoss':
+# 42 +         loss = MSELoss('loss')
+# 43 +     elif config.loss == 'SoftmaxCrossEntropyLoss':
+# 44 +         loss = SoftmaxCrossEntropyLoss('loss')
+# 45 +     elif config.loss == 'HingeLoss':
+# 46 +         loss = HingeLoss('loss')
+# 47 +     elif config.loss == 'FocalLoss':
+# 48 +         loss = FocalLoss('loss')
+# 49 +     else:
+# 50 +         raise ValueError('loss must be MSELoss, SoftmaxCrossEntropyLoss, HingeLoss or FocalLoss')
+# 51 +
+# 52 +     return model, loss
+# 9 - train_data, test_data, train_label, test_label = load_mnist_2d('data')
+# 55 + if __name__ == '__main__':
+# 56 +     parser = ArgumentParser()
+# 57 +     parser.add_argument('--name', required=True, type=str)
+# 58 +     parser.add_argument('--activation', choices=['Selu', 'Swish', 'Relu', 'Gelu'], default='Relu')
+# 59 +     parser.add_argument('--loss', choices=['MSELoss', 'SoftmaxCrossEntropyLoss', 'HingeLoss', 'FocalLoss'], default='SoftmaxCrossEntropyLoss')
+# 60 +     parser.add_argument('--learning_rate', type=float, default=0.01)
+# 61 +     parser.add_argument('--weight_decay', type=float, default=0.0005)
+# 62 +     parser.add_argument('--momentum', type=float, default=0.9)
+# 63 +     parser.add_argument('--batch_size', type=int, default=100)
+# 64 +     parser.add_argument('--max_epoch', type=int, default=100)
+# 65 +     parser.add_argument('--disp_freq', type=int, default=50)
+# 66 +     parser.add_argument('--test_epoch', type=int, default=5)
+# 67 +     parser.add_argument('--hiddenlayers', type=int, default=1)
+# 69 +     config = parser.parse_args()
+# 11 - # Your model defintion here
+# 12 - # You should explore different model architecture
+# 13 - model = Network()
+# 14 - model.add(Linear('fc1', 784, 10, 0.01))
+# 16 - loss = MSELoss(name='loss')
+# 71 +     model, loss = init(config)
+# 73 +     # load data from mnist
+# 74 +     train_data, test_data, train_label, test_label = load_mnist_2d('data')
+# 18 - # Training configuration
+# 19 - # You should adjust these hyperparameters
+# 20 - # NOTE: one iteration means model forward-backwards one batch of samples.
+# 21 - #       one epoch means model has gone through all the training samples.
+# 22 - #       'disp_freq' denotes number of iterations in one epoch to display information.
+# 76 +     wandb.init(project="ANN-HW1",
+# 77 +             config=config,
+# 78 +             name=config.name)
+# 24 - config = {
+# 25 -     'learning_rate': 0.0,
+# 26 -     'weight_decay': 0.0,
+# 27 -     'momentum': 0.0,
+# 28 -     'batch_size': 100,
+# 29 -     'max_epoch': 100,
+# 30 -     'disp_freq': 50,
+# 31 -     'test_epoch': 5
+# 32 - }
+# 80 +     start = time.time()
+# 35 - for epoch in range(config['max_epoch']):
+# 35 ?                          ^^         --
+# 82 +     for epoch in range(config.max_epoch):
+# 82 ? ++++                         ^
+# 36 -     LOG_INFO('Training @ %d epoch...' % (epoch))
+# 83 +         LOG_INFO('Training @ %d epoch...' % (epoch))
+# 83 ? ++++
+# 37 -     train_net(model, loss, config, train_data, train_label, config['batch_size'], config['disp_freq'])
+# 37 ?                                                                   ^^          --        ^^         ^^
+# 84 +         train_net(model, loss, config, train_data, train_label, config.batch_size, config.disp_freq, epoch, config.name)
+# 84 ? ++++                                                                  ^                  ^         ^^^^^^^^^^^^^^^^^^^^
+# 39 -     if epoch % config['test_epoch'] == 0:
+# 39 ?                      ^^          --
+# 86 +         if epoch % config.test_epoch == 0 or epoch == 99:
+# 86 ? ++++                     ^               +++++++++++++++
+# 40 -         LOG_INFO('Testing @ %d epoch...' % (epoch))
+# 87 +             LOG_INFO('Testing @ %d epoch...' % (epoch))
+# 87 ? ++++
+# 41 -         test_net(model, loss, test_data, test_label, config['batch_size'])
+# 41 ?                                                            ^^          ^^
+# 88 +             test_net(model, loss, config, test_data, test_label, config.batch_size, epoch, config.name)
+# 88 ? ++++                            ++++++++                               ^          ^^^^^^^^^^^^^^^^^^^^
+# 89 +
+# 90 +     end = time.time()
+# 91 +     wandb.log({f'{config.hiddenlayers}layers_time': end - start})
+# 92 +
+# 93 +     wandb.finish()
+# _codes/load_data.py -> ../codes/load_data.py
+# 6 -     fd = open(os.path.join(data_dir, 'train-images-idx3-ubyte'))
+# 6 ?                                                   ^
+# 6 +     fd = open(os.path.join(data_dir, 'train-images.idx3-ubyte'))
+# 6 ?                                                   ^
+# 10 -     fd = open(os.path.join(data_dir, 'train-labels-idx1-ubyte'))
+# 10 ?                                                   ^
+# 10 +     fd = open(os.path.join(data_dir, 'train-labels.idx1-ubyte'))
+# 10 ?                                                   ^
+# 14 -     fd = open(os.path.join(data_dir, 't10k-images-idx3-ubyte'))
+# 14 ?                                                  ^
+# 14 +     fd = open(os.path.join(data_dir, 't10k-images.idx3-ubyte'))
+# 14 ?                                                  ^
+# 18 -     fd = open(os.path.join(data_dir, 't10k-labels-idx1-ubyte'))
+# 18 ?                                                  ^
+# 18 +     fd = open(os.path.join(data_dir, 't10k-labels.idx1-ubyte'))
+# 18 ?                                                  ^
+

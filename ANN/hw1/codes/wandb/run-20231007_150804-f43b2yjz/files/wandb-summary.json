@@ -1,0 +1,1 @@
+{"Selu_train_loss": 0.04911479289158304, "Selu_train_acc": 0.9874, "_timestamp": 1696662671.0220191, "_runtime": 186.53210520744324, "_step": 1219, "Selu_test_loss": 0.07108646346383721, "Selu_test_acc": 0.9786, "_wandb": {"runtime": 183}}

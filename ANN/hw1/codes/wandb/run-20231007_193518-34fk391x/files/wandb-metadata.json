@@ -1,0 +1,40 @@
+{
+    "os": "macOS-14.0-arm64-arm-64bit",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-10-07T11:35:21.100576",
+    "startedAt": "2023-10-07T11:35:18.564454",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--activation",
+        "Selu",
+        "--loss",
+        "FocalLoss",
+        "--name",
+        "Selu_Focal",
+        "--hiddenlayers",
+        "2"
+    ],
+    "state": "running",
+    "program": "/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/run_mlp.py",
+    "codePathLocal": "run_mlp.py",
+    "codePath": "run_mlp.py",
+    "host": "wangjuanlideMacBook-Air.local",
+    "username": "wangjuanli",
+    "executable": "/Users/wangjuanli/miniconda3/envs/IAI/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 218.18069458007812
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 8.0
+    }
+}

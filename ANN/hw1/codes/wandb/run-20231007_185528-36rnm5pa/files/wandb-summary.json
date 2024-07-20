@@ -1,0 +1,1 @@
+{"Relu_1layers_train_loss": 0.0629998949621864, "Relu_1layers_train_acc": 0.9828, "_timestamp": 1696676305.619786, "Relu_1layers_test_loss": 0.07792453134167626, "Relu_1layers_test_acc": 0.9734999999999999, "_runtime": 176.84442591667175, "_step": 99, "1layers_time": 172.8258240222931, "_wandb": {"runtime": 174}}

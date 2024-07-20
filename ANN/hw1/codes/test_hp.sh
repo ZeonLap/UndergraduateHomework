@@ -1,0 +1,11 @@
+python run_mlp.py --weight_decay 0 --name wd_0
+python run_mlp.py --weight_decay 0.00001 --name wd_0.0001
+python run_mlp.py --weight_decay 0.00005 --name wd_0.0005
+python run_mlp.py --weight_decay 0.0001 --name wd_0.0001
+python run_mlp.py --weight_decay 0.0005 --name wd_0.0005
+python run_mlp.py --weight_decay 0.001 --name wd_0.001
+python run_mlp.py --weight_decay 0.005 --name wd_0.005
+python run_mlp.py --weight_decay 0.01 --name wd_0.01
+python run_mlp.py --weight_decay 0.05 --name wd_0.05
+python run_mlp.py --weight_decay 0.1 --name wd_0.1
+python run_mlp.py --weight_decay 0.5 --name wd_0.5

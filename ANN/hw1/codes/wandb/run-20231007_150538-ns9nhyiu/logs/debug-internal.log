@@ -1,0 +1,19 @@
+2023-10-07 15:05:38,062 INFO    StreamThr :4801 [internal.py:wandb_internal():86] W&B internal server running at pid: 4801, started at: 2023-10-07 15:05:38.061661
+2023-10-07 15:05:38,063 DEBUG   HandlerThread:4801 [handler.py:handle_request():146] handle_request: status
+2023-10-07 15:05:38,066 INFO    WriterThread:4801 [datastore.py:open_for_write():85] open: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_150538-ns9nhyiu/run-ns9nhyiu.wandb
+2023-10-07 15:05:38,066 DEBUG   SenderThread:4801 [sender.py:send():380] send: header
+2023-10-07 15:05:38,067 DEBUG   SenderThread:4801 [sender.py:send():380] send: run
+2023-10-07 15:05:38,670 DEBUG   HandlerThread:4801 [handler.py:handle_request():146] handle_request: shutdown
+2023-10-07 15:05:38,670 INFO    HandlerThread:4801 [handler.py:finish():866] shutting down handler
+2023-10-07 15:05:39,072 INFO    WriterThread:4801 [datastore.py:close():294] close: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_150538-ns9nhyiu/run-ns9nhyiu.wandb
+2023-10-07 15:05:39,636 INFO    SenderThread:4801 [dir_watcher.py:__init__():211] watching files in: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_150538-ns9nhyiu/files
+2023-10-07 15:05:39,636 INFO    SenderThread:4801 [sender.py:_start_run_threads():1122] run started: ns9nhyiu with start time 1696662338.062914
+2023-10-07 15:05:39,636 INFO    SenderThread:4801 [sender.py:finish():1534] shutting down sender
+2023-10-07 15:05:39,636 INFO    SenderThread:4801 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-10-07 15:05:40,642 INFO    SenderThread:4801 [dir_watcher.py:finish():388] scan: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_150538-ns9nhyiu/files
+2023-10-07 15:05:40,643 INFO    SenderThread:4801 [dir_watcher.py:finish():402] scan save: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_150538-ns9nhyiu/files/config.yaml config.yaml
+2023-10-07 15:05:40,643 INFO    SenderThread:4801 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-07 15:05:40,643 INFO    SenderThread:4801 [file_pusher.py:join():181] waiting for file pusher
+2023-10-07 15:05:42,645 INFO    wandb-upload_0:4801 [upload_job.py:push():131] Uploaded file /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_150538-ns9nhyiu/files/config.yaml
+2023-10-07 15:05:43,167 INFO    SenderThread:4801 [file_stream.py:finish():595] file stream finish called
+2023-10-07 15:05:44,098 INFO    SenderThread:4801 [file_stream.py:finish():599] file stream finish is done

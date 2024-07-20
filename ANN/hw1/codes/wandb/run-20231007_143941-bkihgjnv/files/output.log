@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/run_mlp.py", line 80, in <module>
+    train_net(model, loss, config, train_data, train_label, config['batch_size'], config['disp_freq'])
+TypeError: 'Namespace' object is not subscriptable
+14:39:46.313 Training @ 0 epoch...

@@ -1,0 +1,111 @@
+########################
+# Missing Files
+########################
+# .DS_Store
+
+########################
+# Additional Files
+########################
+# wandb
+# output_random.txt
+# __pycache__
+# train_test
+# data
+# output.txt
+# pretrain
+# tokenizer
+# output_top-p.txt
+
+########################
+# Filled Code
+########################
+# ../codes/main.py:1
+            tgt_ids = torch.tensor(data[st:ed]).to(device)
+            loss = model.batch_loss(lm_logits, tgt_ids, PAD_ID, ce_loss_fct)
+
+# ../codes/model_tfmr.py:1
+            torch.tril(torch.ones((max_positions, max_positions), dtype=torch.bool)).view(1, 1, max_positions, max_positions),
+
+# ../codes/model_tfmr.py:2
+        attn_weights = query @ key.transpose(-1, -2)
+        query_length, key_length = query.size(-2), key.size(-2)
+        causal_mask = self.bias[:, :, key_length - query_length:key_length, :key_length]
+
+        # attn_weights Size: (batch_size, num_attn_heads, sequence_length, sequence_length)
+        attn_weights = F.softmax(attn_weights, dim=-1)  # 概率是在最后一个维度上归一化
+        attn_output = attn_weights @ value
+
+# ../codes/model_tfmr.py:3
+        return tensor.view(tensor.size(0), tensor.size(1), num_heads, attn_head_size).transpose(1, 2)
+
+# ../codes/model_tfmr.py:4
+        tensor = tensor.transpose(1, 2).contiguous()
+        return tensor.view(tensor.size(0), tensor.size(1), num_heads * attn_head_size)
+
+# ../codes/model_tfmr.py:5
+        # HINT: You can refer to Page 39 in lecture 8 for more details
+        # Reference: Slides of Lecture 8, Page 39
+        hidden_states = attn_output + residual
+        residual = hidden_states
+        hidden_states = self.ln_2(hidden_states)
+        attn_output = self.mlp(hidden_states)
+        hidden_states = attn_output + residual
+
+# ../codes/model_tfmr.py:6
+        position_embeds = self.wpe(torch.arange(past_length, input_shape[-1] + past_length, dtype=torch.long, device=device))
+        position_embeds = position_embeds.unsqueeze(0)
+
+# ../codes/model_tfmr.py:7
+            loss = self.batch_loss(lm_logits, labels, PAD_ID, ce_loss_fct).mean()
+
+# ../codes/model_tfmr.py:8
+                        prob = logits.softmax(dim=-1)
+                        sorted_prob, sorted_indices = torch.sort(prob, descending=False)
+                        cumulative_probs = torch.cumsum(sorted_prob, dim=-1)
+                        reserved_probs = cumulative_probs <= 1 - top_p  # 0 for reserved tokens
+                        reserved_logits = reserved_probs.scatter(1, sorted_indices, reserved_probs)
+                        logits.masked_fill_(reserved_logits, -float("Inf"))
+
+
+########################
+# References
+########################
+# Slides of Lecture 8, Page 39
+
+########################
+# Other Modifications
+########################
+# _codes/main.py -> ../codes/main.py
+# 10 + import wandb
+# 39 - parser.add_argument("--pretrain_dir", type=str, default="None",
+# 39 ?                                                         -    -
+# 40 + parser.add_argument("--pretrain_dir", type=str, default=None,
+# 188 -     print(args)
+# 186 +     wandb.init(project='ANN-hw3', config=args, name=args.name)
+# 237 +             wandb.log({"train_loss": train_loss, "val_loss": val_loss, "val_ppl": val_ppl}, step=epoch)
+# 265 +         eval_result = evaluate(gen_ids=result, truth_ids=data_remove_pad["test"])
+# 267 +             fout.write(f"test_loss: {test_loss}, test_ppl: {test_ppl}\n")
+# 268 +             fout.write("forward BLEU-4 {:.3f}, backward BLEU-4 {:.3f}, harmonic BLEU-4 {:.3f}\n".format(eval_result["fw-bleu-4"], eval_result["bw-bleu-4"], eval_result["fw-bw-bleu-4"]))
+# 271 -         eval_result = evaluate(gen_ids=result, truth_ids=data_remove_pad["test"])
+# _codes/model_tfmr.py -> ../codes/model_tfmr.py
+# 279 +
+# 280 +
+# 281 +     def batch_loss(self, logits, labels, PAD_ID, loss_func):
+# 282 +         # Implement the loss function. Note that you should shift logits so that tokens < n predict n
+# 283 +         # HINT: We set the loss to 0 where [PAD] token is the label, except for the last token, where [PAD] token worked as the "eod of sentence" token.
+# 284 +         shifted_logits = logits[..., :-1, :].contiguous()
+# 285 +         shifted_labels = labels[..., 1:].contiguous()
+# 286 +
+# 287 +         position_mask = torch.ones_like(shifted_labels, dtype=torch.float)
+# 288 +         position_mask = (shifted_labels != PAD_ID).float()
+# 289 +         # except for the last token
+# 290 +         eod_positions = torch.cumsum(1 - position_mask, dim=1) == 1
+# 291 +         position_mask.masked_fill_(eod_positions, 1)
+# 292 +
+# 293 +         # Calculate Loss
+# 294 +         element_loss = loss_func(shifted_logits.transpose(1, 2), shifted_labels)
+# 295 +         batch_loss = (element_loss * position_mask).sum(dim=1) / (position_mask.sum(dim=1))
+# 296 +         return batch_loss
+# 297 +
+# 283 -
+

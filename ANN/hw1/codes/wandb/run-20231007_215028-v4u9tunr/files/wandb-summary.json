@@ -1,0 +1,1 @@
+{"wd_1layers_train_loss": 0.0037890619363414634, "wd_1layers_train_acc": 1.0, "_timestamp": 1696686773.906834, "wd_1layers_test_loss": 0.07611096160210583, "wd_1layers_test_acc": 0.9779000000000001, "_runtime": 145.27879977226257, "_step": 99, "1layers_time": 141.1872410774231, "_wandb": {"runtime": 142}}

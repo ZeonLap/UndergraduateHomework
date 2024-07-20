@@ -1,0 +1,136 @@
+########################
+# Additional Files
+########################
+# runs
+# run.sh
+# inception
+# results
+# data
+# __pycache__
+
+########################
+# Filled Code
+########################
+# ../codes/GAN/trainer.py:1
+        D_on_real = self._netD(real_imgs)
+        loss_D_real = BCE_criterion(D_on_real, torch.ones(real_imgs.size(0), device=self._device))
+        D_x = D_on_real.mean().item()
+        loss_D_real.backward()
+
+# ../codes/GAN/trainer.py:2
+        D_on_fake = self._netD(fake_imgs.detach())
+        loss_D_fake = BCE_criterion(D_on_fake, torch.zeros(fake_imgs.size(0), device=self._device))
+        D_G_z1 = D_on_fake.mean().item()
+        loss_D_fake.backward()
+
+# ../codes/GAN/trainer.py:3
+        D_on_fake_new = self._netD(fake_imgs)
+        loss_G = BCE_criterion(D_on_fake_new, torch.ones(fake_imgs.size(0), device=self._device))
+        D_G_z2 = D_on_fake_new.mean().item()
+
+# ../codes/GAN/GAN.py:1
+            nn.ConvTranspose2d(in_channels=latent_dim, out_channels=4 * hidden_dim, kernel_size=4, stride=1, padding=0),
+            # nn.BatchNorm2d(num_features=4 * hidden_dim),
+            nn.ReLU(),
+            nn.ConvTranspose2d(in_channels=4 * hidden_dim, out_channels=2 * hidden_dim, kernel_size=4, stride=2, padding=1),
+            # nn.BatchNorm2d(num_features=2 * hidden_dim),
+            nn.ReLU(),
+            nn.ConvTranspose2d(in_channels=2 * hidden_dim, out_channels=hidden_dim, kernel_size=4, stride=2, padding=1),
+            # nn.BatchNorm2d(num_features=hidden_dim),
+            nn.ReLU(),
+            nn.ConvTranspose2d(in_channels=hidden_dim, out_channels=self.num_channels, kernel_size=4, stride=2, padding=1),
+            nn.Tanh()
+
+        # self.decoder = nn.Sequential(
+        #     nn.Linear(in_features=latent_dim, out_features=1024),
+        #     nn.BatchNorm1d(num_features=1024),
+        #     nn.ReLU(),
+        #     nn.Linear(in_features=1024, out_features=512),
+        #     nn.BatchNorm1d(num_features=512),
+        #     nn.ReLU(),
+        #     nn.Linear(in_features=512, out_features=256),
+        #     nn.BatchNorm1d(num_features=256),
+        #     nn.ReLU(),
+        #     nn.Linear(in_features=256, out_features=32 * 32),
+        #     nn.Tanh()
+        # )
+
+
+########################
+# References
+########################
+
+########################
+# Other Modifications
+########################
+# _codes/GAN/main.py -> ../codes/GAN/main.py
+# 7 + from torchvision.utils import make_grid
+# 8 + from torchvision.utils import save_image
+# 31 +     parser.add_argument('--interpolation_batch', default=5, type=int)
+# 32 +     parser.add_argument('--interpolation_K', default=10, type=int)
+# 31 -     config = 'z-{}_batch-{}_num-train-steps-{}'.format(args.latent_dim, args.batch_size, args.num_training_steps)
+# 35 +     config = 'z-{}-{}_batch-{}_num-train-steps-{}'.format(args.latent_dim, args.generator_hidden_dim, args.batch_size, args.num_training_steps)
+# 35 ?                +++                                                              +++++++++++++++++++++++++++
+# 64 +
+# 65 +     # interpolation
+# 66 +     # Reference: yangjx21
+# 67 +     # I tried to implement this in a 'PyTorch way'. However I failed.
+# 68 +     with torch.no_grad():
+# 69 +         z_1 = torch.randn(args.interpolation_batch, netG.latent_dim, 1, 1, device=device)
+# 70 +         z_2 = torch.randn(args.interpolation_batch, netG.latent_dim, 1, 1, device=device)
+# 71 +         final_imgs = []
+# 72 +         for i in range(z_1.size(0)):
+# 73 +             interpolated_imgs = []
+# 74 +             for i_over_K in torch.linspace(0, 1, steps=args.interpolation_K):
+# 75 +                 z = z_1[i] + i_over_K * (z_2[i] - z_1[i])
+# 76 +                 z = z.unsqueeze(0)  # add batch dimension
+# 77 +                 img = netG(z)
+# 78 +                 interpolated_imgs.append(img)
+# 79 +
+# 80 +             row = torch.cat(interpolated_imgs, 0)
+# 81 +             final_imgs.append(row)
+# 82 +         final_imgs = torch.cat(final_imgs, 0)
+# 83 +         final_imgs = make_grid(final_imgs, nrow=10) * 0.5 + 0.5
+# 84 +         save_image(final_imgs, os.path.join(args.ckpt_dir, "interpolation.png"))
+# 85 +
+# 86 +     # extrapolation
+# 87 +     with torch.no_grad():
+# 88 +         z_1 = torch.randn(args.interpolation_batch, netG.latent_dim, 1, 1, device=device)
+# 89 +         z_2 = torch.randn(args.interpolation_batch, netG.latent_dim, 1, 1, device=device)
+# 90 +         final_imgs = []
+# 91 +         for i in range(z_1.size(0)):
+# 92 +             interpolated_imgs = []
+# 93 +             for i_over_K in torch.linspace(1, 2, steps=args.interpolation_K):
+# 94 +                 z = z_1[i] + i_over_K * (z_2[i] - z_1[i])
+# 95 +                 z = z.unsqueeze(0)  # add batch dimension
+# 96 +                 img = netG(z)
+# 97 +                 interpolated_imgs.append(img)
+# 98 +
+# 99 +             row = torch.cat(interpolated_imgs, 0)
+# 100 +             final_imgs.append(row)
+# 101 +         final_imgs = torch.cat(final_imgs, 0)
+# 102 +         final_imgs = make_grid(final_imgs, nrow=10) * 0.5 + 0.5
+# 103 +         save_image(final_imgs, os.path.join(args.ckpt_dir, "extrapolation.png"))
+# 104 +
+# 105 +
+# 106 +     # Generate samples
+# 107 +     with torch.no_grad():
+# 108 +         samples = netG.forward(torch.randn(100, netG.latent_dim, 1, 1, device=device))
+# 109 +         sample_imgs = make_grid(samples, nrow=10) * 0.5 + 0.5
+# 110 +         save_image(sample_imgs, os.path.join(args.ckpt_dir, "samples.png"))
+# 111 +
+# _codes/GAN/GAN.py -> ../codes/GAN/GAN.py
+# 65 +         # return self.decoder(z.view(z.shape[0],-1)).view(-1, 1, 32, 32)
+# 107 +
+# 108 +         # self.clf = nn.Sequential(
+# 109 +         #     nn.Linear(num_channels * 32 * 32, 1024),
+# 110 +         #     nn.LeakyReLU(0.2, inplace=True),
+# 111 +         #     nn.Linear(1024, 256),
+# 112 +         #     nn.LeakyReLU(0.2, inplace=True),
+# 113 +         #     nn.Linear(256, 64),
+# 114 +         #     nn.LeakyReLU(0.2, inplace=True),
+# 115 +         #     nn.Linear(64, 1),
+# 116 +         #     nn.Sigmoid()
+# 117 +         # )
+# 120 +         # return self.clf(x.view(x.shape[0], -1)).view(-1)
+

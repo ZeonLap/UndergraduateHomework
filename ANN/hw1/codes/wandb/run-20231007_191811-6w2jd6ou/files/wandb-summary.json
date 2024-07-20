@@ -1,0 +1,1 @@
+{"Selu_2layers_train_loss": 0.036964569881148185, "Selu_2layers_train_acc": 0.987, "_timestamp": 1696678090.177509, "Selu_2layers_test_loss": 0.07025991235188458, "Selu_2layers_test_acc": 0.9773000000000001, "_runtime": 598.6436421871185, "_step": 99, "2layers_time": 594.0940511226654, "_wandb": {"runtime": 595}}

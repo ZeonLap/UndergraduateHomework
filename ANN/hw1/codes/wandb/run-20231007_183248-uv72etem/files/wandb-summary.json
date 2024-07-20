@@ -1,0 +1,1 @@
+{"Swish_1layers_train_loss": 0.09903364940371916, "Swish_1layers_train_acc": 0.9960000000000001, "_timestamp": 1696674991.1890602, "Swish_1layers_test_loss": 0.3526461564934207, "Swish_1layers_test_acc": 0.9833, "_runtime": 222.59571719169617, "_step": 99, "1layers_time": 218.74471402168274, "_wandb": {"runtime": 220}}

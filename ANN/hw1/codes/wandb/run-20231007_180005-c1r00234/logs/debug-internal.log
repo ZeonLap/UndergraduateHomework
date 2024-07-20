@@ -1,0 +1,380 @@
+2023-10-07 18:00:05,611 INFO    StreamThr :9210 [internal.py:wandb_internal():86] W&B internal server running at pid: 9210, started at: 2023-10-07 18:00:05.611135
+2023-10-07 18:00:05,613 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status
+2023-10-07 18:00:05,615 INFO    WriterThread:9210 [datastore.py:open_for_write():85] open: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/run-c1r00234.wandb
+2023-10-07 18:00:05,615 DEBUG   SenderThread:9210 [sender.py:send():380] send: header
+2023-10-07 18:00:05,615 DEBUG   SenderThread:9210 [sender.py:send():380] send: run
+2023-10-07 18:00:07,451 INFO    SenderThread:9210 [dir_watcher.py:__init__():211] watching files in: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files
+2023-10-07 18:00:07,451 INFO    SenderThread:9210 [sender.py:_start_run_threads():1122] run started: c1r00234 with start time 1696672805.611873
+2023-10-07 18:00:07,463 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: check_version
+2023-10-07 18:00:07,464 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: check_version
+2023-10-07 18:00:09,392 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: run_start
+2023-10-07 18:00:09,402 DEBUG   HandlerThread:9210 [system_info.py:__init__():32] System info init
+2023-10-07 18:00:09,402 DEBUG   HandlerThread:9210 [system_info.py:__init__():47] System info init done
+2023-10-07 18:00:09,403 INFO    HandlerThread:9210 [system_monitor.py:start():194] Starting system monitor
+2023-10-07 18:00:09,403 INFO    SystemMonitor:9210 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-10-07 18:00:09,403 INFO    HandlerThread:9210 [system_monitor.py:probe():214] Collecting system info
+2023-10-07 18:00:09,404 DEBUG   HandlerThread:9210 [system_info.py:probe():196] Probing system
+2023-10-07 18:00:09,404 INFO    SystemMonitor:9210 [interfaces.py:start():190] Started cpu monitoring
+2023-10-07 18:00:09,404 INFO    SystemMonitor:9210 [interfaces.py:start():190] Started disk monitoring
+2023-10-07 18:00:09,407 INFO    SystemMonitor:9210 [interfaces.py:start():190] Started gpuapple monitoring
+2023-10-07 18:00:09,409 INFO    SystemMonitor:9210 [interfaces.py:start():190] Started memory monitoring
+2023-10-07 18:00:09,410 INFO    SystemMonitor:9210 [interfaces.py:start():190] Started network monitoring
+2023-10-07 18:00:09,414 DEBUG   HandlerThread:9210 [gitlib.py:_init_repo():53] git repository is invalid
+2023-10-07 18:00:09,414 DEBUG   HandlerThread:9210 [system_info.py:probe():244] Probing system done
+2023-10-07 18:00:09,415 DEBUG   HandlerThread:9210 [system_monitor.py:probe():223] {'os': 'macOS-14.0-arm64-arm-64bit', 'python': '3.9.16', 'heartbeatAt': '2023-10-07T10:00:09.404206', 'startedAt': '2023-10-07T10:00:05.602416', 'docker': None, 'cuda': None, 'args': ('--hiddenlayers', '2', '--name', 'whatever'), 'state': 'running', 'program': '/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/run_mlp.py', 'codePathLocal': 'run_mlp.py', 'codePath': 'run_mlp.py', 'host': 'wangjuanlideMacBook-Air.local', 'username': 'wangjuanli', 'executable': '/Users/wangjuanli/miniconda3/envs/IAI/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'/': {'total': 460.4317207336426, 'used': 216.83158493041992}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 8.0}}
+2023-10-07 18:00:09,415 INFO    HandlerThread:9210 [system_monitor.py:probe():224] Finished collecting system info
+2023-10-07 18:00:09,415 INFO    HandlerThread:9210 [system_monitor.py:probe():227] Publishing system info
+2023-10-07 18:00:09,415 DEBUG   HandlerThread:9210 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-10-07 18:00:09,415 DEBUG   HandlerThread:9210 [system_info.py:_save_pip():68] Saving pip packages done
+2023-10-07 18:00:09,415 DEBUG   HandlerThread:9210 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-10-07 18:00:09,462 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/requirements.txt
+2023-10-07 18:00:09,463 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/conda-environment.yaml
+2023-10-07 18:00:10,848 DEBUG   HandlerThread:9210 [system_info.py:_save_conda():87] Saving conda packages done
+2023-10-07 18:00:10,849 INFO    HandlerThread:9210 [system_monitor.py:probe():229] Finished publishing system info
+2023-10-07 18:00:10,851 DEBUG   SenderThread:9210 [sender.py:send():380] send: files
+2023-10-07 18:00:10,851 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-10-07 18:00:10,852 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:10,855 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-07 18:00:10,855 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-07 18:00:10,855 DEBUG   SenderThread:9210 [sender.py:send():380] send: telemetry
+2023-10-07 18:00:10,855 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: stop_status
+2023-10-07 18:00:11,097 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:11,306 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:11,472 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/conda-environment.yaml
+2023-10-07 18:00:11,472 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-metadata.json
+2023-10-07 18:00:11,491 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:11,677 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:11,871 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:12,086 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:12,281 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:12,482 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:12,530 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:12,872 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:12,892 INFO    wandb-upload_0:9210 [upload_job.py:push():131] Uploaded file /var/folders/7s/xm4033hj2bvbxd8g96thk_pm0000gn/T/tmp9t5hiac0wandb/m2jwpnxm-wandb-metadata.json
+2023-10-07 18:00:13,321 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:13,733 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:13,949 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:14,072 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:14,280 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:14,286 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:14,286 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:14,286 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:14,490 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:14,491 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:14,492 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:14,684 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:14,985 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:15,211 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:15,453 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:15,681 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:15,870 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:15,874 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:16,083 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:16,262 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:16,446 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:16,504 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:16,755 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:17,000 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:17,002 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:17,002 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:17,003 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:17,474 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:17,514 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:17,942 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:18,517 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:18,611 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:19,099 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:19,405 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:19,683 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:20,003 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:20,268 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:20,531 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:20,540 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:20,757 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:21,014 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:21,024 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:21,247 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:21,248 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:21,248 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:21,249 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:21,543 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:21,703 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:22,074 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:22,550 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:22,871 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:23,235 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:23,550 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:23,871 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:24,304 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:24,559 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:24,600 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:25,057 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:25,278 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:25,521 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:25,790 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:25,790 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:25,791 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:25,791 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:25,863 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-07 18:00:25,865 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-07 18:00:25,866 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: stop_status
+2023-10-07 18:00:26,111 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:26,262 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:26,552 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:26,575 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:26,576 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:26,841 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:27,454 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:27,825 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:28,167 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:28,553 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:28,586 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:28,939 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:29,221 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:29,615 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:29,922 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:30,185 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:30,186 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:30,186 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:30,188 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:30,461 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:30,590 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:30,591 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:30,779 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:31,200 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:31,538 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:31,549 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:32,357 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:32,605 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:32,683 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:33,114 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:33,430 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:33,717 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:34,058 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:34,355 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:34,474 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:34,612 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:34,668 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:34,671 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:34,671 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:34,671 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:34,865 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:35,094 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:35,287 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:35,518 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:35,617 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:35,688 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:35,927 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:36,096 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:36,280 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:36,469 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:36,624 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:36,650 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:36,658 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:36,820 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:37,000 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:37,149 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:37,149 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:37,150 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:37,241 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:37,418 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:37,600 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:37,627 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/config.yaml
+2023-10-07 18:00:37,627 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:37,839 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:38,064 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:38,272 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:38,564 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:38,631 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:38,806 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:39,015 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:39,195 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:39,407 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:39,644 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:39,645 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:39,645 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:39,649 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:39,839 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:40,044 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:40,216 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:40,385 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:40,652 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:40,653 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:40,849 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:40,873 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-07 18:00:40,876 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: stop_status
+2023-10-07 18:00:40,879 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-07 18:00:41,073 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:41,272 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:41,466 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:41,806 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:42,118 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:42,341 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:42,342 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:42,665 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:42,780 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:42,781 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:42,781 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:42,782 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:43,048 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:43,324 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:43,613 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:43,666 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:43,773 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:44,070 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:44,321 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:44,573 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:44,667 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:44,805 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:45,007 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-07 18:00:45,081 DEBUG   SenderThread:9210 [sender.py:send():380] send: exit
+2023-10-07 18:00:45,082 INFO    SenderThread:9210 [sender.py:send_exit():585] handling exit code: 255
+2023-10-07 18:00:45,082 INFO    SenderThread:9210 [sender.py:send_exit():587] handling runtime: 35
+2023-10-07 18:00:45,082 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:45,083 INFO    SenderThread:9210 [sender.py:send_exit():593] send defer
+2023-10-07 18:00:45,083 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,083 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 0
+2023-10-07 18:00:45,083 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,083 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-10-07 18:00:45,083 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 1
+2023-10-07 18:00:45,083 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,083 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 1
+2023-10-07 18:00:45,083 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,083 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-10-07 18:00:45,083 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 2
+2023-10-07 18:00:45,083 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,084 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 2
+2023-10-07 18:00:45,084 INFO    HandlerThread:9210 [system_monitor.py:finish():203] Stopping system monitor
+2023-10-07 18:00:45,084 DEBUG   SystemMonitor:9210 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-10-07 18:00:45,084 DEBUG   SystemMonitor:9210 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-10-07 18:00:45,084 DEBUG   SystemMonitor:9210 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-10-07 18:00:45,085 INFO    HandlerThread:9210 [interfaces.py:finish():202] Joined cpu monitor
+2023-10-07 18:00:45,085 INFO    HandlerThread:9210 [interfaces.py:finish():202] Joined disk monitor
+2023-10-07 18:00:45,085 INFO    HandlerThread:9210 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-10-07 18:00:45,085 INFO    HandlerThread:9210 [interfaces.py:finish():202] Joined memory monitor
+2023-10-07 18:00:45,085 INFO    HandlerThread:9210 [interfaces.py:finish():202] Joined network monitor
+2023-10-07 18:00:45,085 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,085 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-10-07 18:00:45,086 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 3
+2023-10-07 18:00:45,086 DEBUG   SenderThread:9210 [sender.py:send():380] send: telemetry
+2023-10-07 18:00:45,086 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,086 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 3
+2023-10-07 18:00:45,086 DEBUG   SenderThread:9210 [sender.py:send():380] send: stats
+2023-10-07 18:00:45,086 DEBUG   SenderThread:9210 [sender.py:send():380] send: history
+2023-10-07 18:00:45,086 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: summary_record
+2023-10-07 18:00:45,087 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:45,087 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,087 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-10-07 18:00:45,087 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 4
+2023-10-07 18:00:45,087 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,087 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 4
+2023-10-07 18:00:45,087 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,087 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-10-07 18:00:45,087 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 5
+2023-10-07 18:00:45,087 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,087 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 5
+2023-10-07 18:00:45,088 DEBUG   SenderThread:9210 [sender.py:send():380] send: summary
+2023-10-07 18:00:45,088 INFO    SenderThread:9210 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-07 18:00:45,088 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,088 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-10-07 18:00:45,088 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 6
+2023-10-07 18:00:45,088 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,088 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 6
+2023-10-07 18:00:45,088 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,088 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-10-07 18:00:45,096 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: status_report
+2023-10-07 18:00:45,449 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 7
+2023-10-07 18:00:45,449 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:45,449 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 7
+2023-10-07 18:00:45,449 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:45,449 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-10-07 18:00:45,673 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/config.yaml
+2023-10-07 18:00:45,673 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:46,087 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-07 18:00:46,677 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:47,090 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 8
+2023-10-07 18:00:47,090 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: poll_exit
+2023-10-07 18:00:47,090 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:47,091 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 8
+2023-10-07 18:00:47,091 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:47,092 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-10-07 18:00:47,092 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-07 18:00:47,092 INFO    SenderThread:9210 [job_builder.py:build():281] Attempting to build job artifact
+2023-10-07 18:00:47,094 INFO    SenderThread:9210 [job_builder.py:_get_source_type():404] no source found
+2023-10-07 18:00:47,094 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 9
+2023-10-07 18:00:47,094 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: poll_exit
+2023-10-07 18:00:47,094 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:47,095 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 9
+2023-10-07 18:00:47,095 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:47,095 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-10-07 18:00:47,095 INFO    SenderThread:9210 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-10-07 18:00:47,680 INFO    Thread-12 :9210 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:47,681 INFO    SenderThread:9210 [dir_watcher.py:finish():388] scan: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files
+2023-10-07 18:00:47,682 INFO    SenderThread:9210 [dir_watcher.py:finish():402] scan save: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/requirements.txt requirements.txt
+2023-10-07 18:00:47,682 INFO    SenderThread:9210 [dir_watcher.py:finish():402] scan save: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log output.log
+2023-10-07 18:00:47,688 INFO    SenderThread:9210 [dir_watcher.py:finish():402] scan save: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/config.yaml config.yaml
+2023-10-07 18:00:47,689 INFO    SenderThread:9210 [dir_watcher.py:finish():402] scan save: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json wandb-summary.json
+2023-10-07 18:00:47,689 INFO    SenderThread:9210 [dir_watcher.py:finish():402] scan save: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/conda-environment.yaml conda-environment.yaml
+2023-10-07 18:00:47,690 INFO    SenderThread:9210 [dir_watcher.py:finish():402] scan save: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-metadata.json wandb-metadata.json
+2023-10-07 18:00:47,690 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 10
+2023-10-07 18:00:47,690 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:47,695 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 10
+2023-10-07 18:00:47,736 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:47,736 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-10-07 18:00:47,738 INFO    SenderThread:9210 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-07 18:00:48,093 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-07 18:00:48,094 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: poll_exit
+2023-10-07 18:00:48,536 INFO    wandb-upload_1:9210 [upload_job.py:push():131] Uploaded file /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/output.log
+2023-10-07 18:00:49,096 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-07 18:00:49,097 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: poll_exit
+2023-10-07 18:00:49,102 INFO    wandb-upload_3:9210 [upload_job.py:push():131] Uploaded file /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/wandb-summary.json
+2023-10-07 18:00:49,158 INFO    wandb-upload_0:9210 [upload_job.py:push():131] Uploaded file /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/requirements.txt
+2023-10-07 18:00:49,683 INFO    wandb-upload_2:9210 [upload_job.py:push():131] Uploaded file /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/config.yaml
+2023-10-07 18:00:49,736 INFO    wandb-upload_4:9210 [upload_job.py:push():131] Uploaded file /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/files/conda-environment.yaml
+2023-10-07 18:00:49,937 INFO    Thread-11 :9210 [sender.py:transition_state():613] send defer: 11
+2023-10-07 18:00:49,938 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:49,938 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 11
+2023-10-07 18:00:49,939 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:49,939 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-10-07 18:00:49,939 INFO    SenderThread:9210 [file_pusher.py:join():181] waiting for file pusher
+2023-10-07 18:00:49,939 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 12
+2023-10-07 18:00:49,940 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:49,940 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 12
+2023-10-07 18:00:49,940 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:49,940 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-10-07 18:00:49,940 INFO    SenderThread:9210 [file_stream.py:finish():595] file stream finish called
+2023-10-07 18:00:50,102 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-07 18:00:50,267 INFO    SenderThread:9210 [file_stream.py:finish():599] file stream finish is done
+2023-10-07 18:00:50,268 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 13
+2023-10-07 18:00:50,268 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: poll_exit
+2023-10-07 18:00:50,268 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:50,269 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 13
+2023-10-07 18:00:50,269 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:50,270 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-10-07 18:00:50,270 INFO    SenderThread:9210 [sender.py:transition_state():613] send defer: 14
+2023-10-07 18:00:50,270 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: defer
+2023-10-07 18:00:50,271 DEBUG   SenderThread:9210 [sender.py:send():380] send: final
+2023-10-07 18:00:50,271 INFO    HandlerThread:9210 [handler.py:handle_request_defer():172] handle defer: 14
+2023-10-07 18:00:50,271 DEBUG   SenderThread:9210 [sender.py:send():380] send: footer
+2023-10-07 18:00:50,271 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: defer
+2023-10-07 18:00:50,271 INFO    SenderThread:9210 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-10-07 18:00:50,272 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-07 18:00:50,273 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: poll_exit
+2023-10-07 18:00:50,274 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-07 18:00:50,274 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: poll_exit
+2023-10-07 18:00:50,275 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: server_info
+2023-10-07 18:00:50,275 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: server_info
+2023-10-07 18:00:50,276 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: get_summary
+2023-10-07 18:00:50,279 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: sampled_history
+2023-10-07 18:00:50,280 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-07 18:00:50,281 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: job_info
+2023-10-07 18:00:50,595 DEBUG   SenderThread:9210 [sender.py:send_request():407] send_request: job_info
+2023-10-07 18:00:50,596 INFO    MainThread:9210 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2023-10-07 18:00:50,596 INFO    MainThread:9210 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2023-10-07 18:00:50,596 INFO    MainThread:9210 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2023-10-07 18:00:50,597 DEBUG   HandlerThread:9210 [handler.py:handle_request():146] handle_request: shutdown
+2023-10-07 18:00:50,597 INFO    HandlerThread:9210 [handler.py:finish():866] shutting down handler
+2023-10-07 18:00:51,286 INFO    WriterThread:9210 [datastore.py:close():294] close: /Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/wandb/run-20231007_180005-c1r00234/run-c1r00234.wandb
+2023-10-07 18:00:51,596 INFO    SenderThread:9210 [sender.py:finish():1534] shutting down sender
+2023-10-07 18:00:51,596 INFO    SenderThread:9210 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-07 18:00:51,597 INFO    SenderThread:9210 [file_pusher.py:join():181] waiting for file pusher

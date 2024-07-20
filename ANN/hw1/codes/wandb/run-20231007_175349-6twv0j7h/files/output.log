@@ -1,0 +1,30 @@
+17:53:53.445 Training @ 0 epoch...
+17:53:53.658   Training iter 50, batch loss 2.3020, batch acc 0.1102
+17:53:53.845   Training iter 100, batch loss 2.3003, batch acc 0.1128
+17:53:54.030   Training iter 150, batch loss 2.2985, batch acc 0.1110
+17:53:54.246   Training iter 200, batch loss 2.2903, batch acc 0.1138
+17:53:54.459   Training iter 250, batch loss 2.2486, batch acc 0.1648
+17:53:54.663   Training iter 300, batch loss 1.9782, batch acc 0.2560
+17:53:54.887   Training iter 350, batch loss 1.4550, batch acc 0.4616
+17:53:55.101   Training iter 400, batch loss 1.1081, batch acc 0.6092
+17:53:55.288   Training iter 450, batch loss 0.8556, batch acc 0.7052
+17:53:55.458   Training iter 500, batch loss 0.7310, batch acc 0.7648
+17:53:55.626   Training iter 550, batch loss 0.6771, batch acc 0.7832
+17:53:55.798   Training iter 600, batch loss 0.5898, batch acc 0.8158
+17:53:55.798 Testing @ 0 epoch...
+17:53:55.907     Testing, total mean loss 0.54025, total acc 0.84090
+17:53:55.907 Training @ 1 epoch...
+17:53:56.083   Training iter 50, batch loss 0.5080, batch acc 0.8450
+17:53:56.301   Training iter 100, batch loss 0.5124, batch acc 0.8450
+17:53:56.535   Training iter 150, batch loss 0.4638, batch acc 0.8648
+17:53:56.713   Training iter 200, batch loss 0.4503, batch acc 0.8664
+Traceback (most recent call last):
+  File "/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/run_mlp.py", line 82, in <module>
+    train_net(model, loss, config, train_data, train_label, config.batch_size, config.disp_freq, epoch, config.name)
+  File "/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/solve_net.py", line 36, in train_net
+    model.backward(grad)
+  File "/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/network.py", line 21, in backward
+    grad_input = self.layer_list[i].backward(grad_input)
+  File "/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/layers.py", line 139, in backward
+    return grad_output @ self.W.T
+KeyboardInterrupt

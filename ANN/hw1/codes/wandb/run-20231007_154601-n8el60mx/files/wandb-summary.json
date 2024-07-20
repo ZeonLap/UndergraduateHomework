@@ -1,0 +1,1 @@
+{"Relu_train_loss": 0.11527005449791897, "Relu_train_acc": 0.9952, "_timestamp": 1696664973.0173109, "_runtime": 211.80698084831238, "_step": 1219, "Relu_test_loss": 0.40300770238415345, "Relu_test_acc": 0.9793000000000001, "_wandb": {"runtime": 208}}

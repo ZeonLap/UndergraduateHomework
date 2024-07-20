@@ -1,0 +1,1 @@
+{"Gelu_train_loss": 0.07338179070993459, "Gelu_train_acc": 0.9834, "_timestamp": 1696663832.826844, "_runtime": 169.50806498527527, "_step": 1219, "Gelu_test_loss": 0.08461923712857175, "Gelu_test_acc": 0.975, "_wandb": {"runtime": 166}}

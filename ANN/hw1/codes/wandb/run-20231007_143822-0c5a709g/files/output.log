@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/wangjuanli/Codefield/2023Fall/ANN/HW1/codes/run_mlp.py", line 78, in <module>
+    for epoch in range(config['max_epoch']):
+TypeError: 'Namespace' object is not subscriptable

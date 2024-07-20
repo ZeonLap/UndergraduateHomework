@@ -1,0 +1,59 @@
+wandb_version: 1
+
+name:
+  desc: null
+  value: Swish_Hinge
+activation:
+  desc: null
+  value: Swish
+loss:
+  desc: null
+  value: HingeLoss
+learning_rate:
+  desc: null
+  value: 0.01
+weight_decay:
+  desc: null
+  value: 0.0005
+momentum:
+  desc: null
+  value: 0.9
+batch_size:
+  desc: null
+  value: 100
+max_epoch:
+  desc: null
+  value: 100
+disp_freq:
+  desc: null
+  value: 50
+test_epoch:
+  desc: null
+  value: 5
+hiddenlayers:
+  desc: null
+  value: 2
+_wandb:
+  desc: null
+  value:
+    python_version: 3.9.16
+    cli_version: 0.15.12
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1696679490.936794
+    t:
+      1:
+      - 55
+      2:
+      - 55
+      3:
+      - 2
+      - 13
+      - 16
+      - 23
+      4: 3.9.16
+      5: 0.15.12
+      8:
+      - 4
+      - 5
+      13: darwin-arm64
